@@ -1,12 +1,7 @@
-gsap.registerPlugin(ScrollTrigger);
-
 // locomotive ja - smooth scrolling
 const scroll = new LocomotiveScroll({
   el: document.querySelector("#main"),
   smooth: true,
-  smartphone: {
-    smooth: false,
-  },
 });
 
 // gsap
@@ -18,19 +13,11 @@ gsap.from(".nlink", {
   opacity: 0,
 });
 
-// gsap.from(".anim2", {
-//   stagger: 0.3,
-//   y: 50,
-//   duration: 1,
-//   ease: Expo,
-//   opacity: 0,
-// });
-
 gsap.from(".anim2", {
   stagger: 0.3,
-  y: 20, 
-  duration: 0.8, 
-  ease: Power1, 
+  y: 20,
+  duration: 1,
+  ease: Power1,
   opacity: 0,
 });
 
@@ -175,21 +162,17 @@ Shery.imageEffect("#Section3 .left", {
   gooey: true,
 });
 
-document
-  .querySelector("#Section4 .cover button")
-  .addEventListener("mouseover", () => {
-    gsap.to("#Section4 video", {
-      opacity: 1,
-      duration: 1,
-      ease: Power4,
-    });
-  });
-document
-  .querySelector("#Section4 .cover button")
-  .addEventListener("mouseleave", () => {
-    gsap.to("#Section4 video", {
-      opacity: 0,
-      duration: 1,
-      ease: Power4,
-    });
-  });
+document.querySelector("#Section4 .cover button").addEventListener("mouseover", () => {
+    gsap.to("#Section4 video",{
+        opacity:1,
+        duration:1,
+        ease:Power4
+    })
+});
+document.querySelector("#Section4 .cover button").addEventListener("mouseleave", () => {
+    gsap.to("#Section4 video",{
+        opacity:0,
+        duration:1,
+        ease:Power4
+    })
+});
